@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    #Third party apps
+    'django_bootstrap5',
+
     #my apps
     'learning_logs',
     'users',
@@ -125,3 +128,14 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+""" Django setting for learning-log project"""
+#My Settings
+
+LOGIN_URL = '/users/login/'
+
+#Setting for django-bootstrap5
+BOOTSTRAP5 = {
+    'include_jquery': True,
+}
