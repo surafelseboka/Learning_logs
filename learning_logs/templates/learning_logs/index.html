@@ -1,18 +1,28 @@
 {% extends "learning_logs/base.html" %}
 
 {% block header %}
-  <div class="jumbotron">
-    <h1>Track your learning.</h1>
+<div class="bg-primary text-white py-5 text-center rounded">
+  <div class="container">
+    <h1 class="display-4">Track Your Learning</h1>
+    <p class="lead">Create your own personal learning log and keep track of everything you're studying.</p>
+    <!-- <a href="{% url 'users:register' %}" class="btn btn-light btn-lg mt-3">Register an Account</a> -->
   </div>
+</div>
 {% endblock header %}
 
 {% block content %}
-<h2>
-    <a href="{% url'learning_logs:register' %}" Register an account></a> to make
-    your own Learning Log, and list all the topics you're learning about.
-</h2>
-<h2>
-    Whenever you learn something new about topic, make an enty summarizing what've you learned.
-</h2>
-
-{% endblock content%} 
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <h2 class="mb-4">How it works</h2>
+      <p class="lead">
+        After registering, you can create topics and make entries to record what you've learned.
+        It's a simple and effective way to organize your study notes or track progress in any field.
+      </p>
+      <p class="lead">
+        Whenever you learn something new, create an entry to summarize and reflect on what you've learned.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock content %}

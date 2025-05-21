@@ -6,11 +6,12 @@ class TopicForm(forms.ModelForm):
     class Meta:
         model = Topic
         fields = ['text']
-        lables = {'text': ''}
+        labels = {'text': ''}  # fixed typo from 'lables'
 
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
         fields = ['text']
-        lables = {'text': ''}
-        widgets = {'text': forms.Textarea(attrs={'cols':80})}
+        labels = {'text': ''}  # fixed typo from 'lables'
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+

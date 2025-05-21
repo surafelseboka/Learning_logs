@@ -1,20 +1,32 @@
 {% extends "learning_logs/base.html" %}
+{% load django_bootstrap5 %}
+
+{% block header %}
+<h1 class="mb-4">Topics</h1>
+{% endblock header %}
 
 {% block content %}
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for topic in topics %}
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a class="text-decoration-none" href="{% url 'learning_logs:topic' topic.id %}">
+              {{ topic }}
+            </a>
+          </h5>
+        </div>
+      </div>
+    </div>
+  {% empty %}
+    <p>No topics have been added yet.</p>
+  {% endfor %}
+</div>
 
-  <p>Topics</p>
-
-  <ul>
-    {% for topic in topics %}
-      <li>
-        <a href="{% url 'learning_logs:topic' topic.id %}"> {{ topic }}</a>
-      </li>
-    {% empty %}
-      <li>No topics have been added yet.</li>
-    {% endfor %}
-  </ul>
-
-  <a href="{% url 'learning_logs:new_topic' %}"> Add a new topic:</a>
-
-
+<div class="mt-4">
+  <a class="btn btn-primary" href="{% url 'learning_logs:new_topic' %}">
+    Add a New Topic
+  </a>
+</div>
 {% endblock content %}
